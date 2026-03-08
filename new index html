@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SHS Reviewer Hub</title>
+
+<style>
+
+body{
+font-family: Arial;
+margin:0;
+background:#f5f7fb;
+}
+
+header{
+background:#3f6df6;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+nav{
+background:#2e4ecf;
+padding:10px;
+text-align:center;
+}
+
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:25px;
+}
+
+.card{
+background:white;
+padding:20px;
+margin:15px 0;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.subject{
+margin-top:10px;
+}
+
+button{
+background:#3f6df6;
+color:white;
+border:none;
+padding:8px 12px;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#2e4ecf;
+}
+
+.hidden{
+display:none;
+}
+
+.quiz{
+margin-top:20px;
+}
+
+</style>
+
+<script>
+
+function toggle(id){
+let element=document.getElementById(id)
+
+if(element.style.display=="none"){
+element.style.display="block"
+}
+else{
+element.style.display="none"
+}
+}
+
+function checkQuiz(){
+
+let answer=document.querySelector('input[name="q1"]:checked')
+
+if(!answer){
+alert("Select an answer first")
+return
+}
+
+if(answer.value=="correct"){
+alert("Correct!")
+}
+else{
+alert("Wrong answer. Review again!")
+}
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<header>
+<h1>Senior High Reviewer Hub</h1>
+<p>Brief Reviewers for Grade 11 and Grade 12</p>
+</header>
+
+<nav>
+<a href="#g11">Grade 11</a>
+<a href="#g12">Grade 12</a>
+<a href="#quiz">Quiz</a>
+</nav>
+
+<div class="container">
+
+<!-- GRADE 11 -->
+
+<div class="card" id="g11">
+<h2>Grade 11 Core Subjects</h2>
+
+<div class="subject">
+<h3>General Mathematics</h3>
+
+<button onclick="toggle('g11mathq1')">Quarter 1</button>
+<div id="g11mathq1" class="hidden">
+<p>
+Functions – relationship between variables.  
+Domain – allowed input values.  
+Range – possible outputs.
+</p>
+</div>
+
+<button onclick="toggle('g11mathq2')">Quarter 2</button>
+<div id="g11mathq2" class="hidden">
+<p>
+Rational Functions – fractions with polynomials.  
+Graph behavior shows asymptotes.
+</p>
+</div>
+
+</div>
+
+<div class="subject">
+<h3>Earth Science</h3>
+
+<button onclick="toggle('g11sciq1')">Quarter 1</button>
+<div id="g11sciq1" class="hidden">
+<p>
+Earth's Layers: crust, mantle, core.  
+Plate tectonics explains earthquakes and volcanoes.
+</p>
+</div>
+
+<button onclick="toggle('g11sciq2')">Quarter 2</button>
+<div id="g11sciq2" class="hidden">
+<p>
+Minerals and rocks form through geological processes.  
+Rock cycle connects igneous, sedimentary, metamorphic.
+</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- GRADE 12 -->
+
+<div class="card" id="g12">
+<h2>Grade 12 Core Subjects</h2>
+
+<div class="subject">
+<h3>Media and Information Literacy</h3>
+
+<button onclick="toggle('milq1')">Quarter 1</button>
+<div id="milq1" class="hidden">
+<p>
+Media literacy means understanding and analyzing media messages.
+</p>
+</div>
+
+<button onclick="toggle('milq2')">Quarter 2</button>
+<div id="milq2" class="hidden">
+<p>
+Information literacy helps evaluate reliable sources and avoid misinformation.
+</p>
+</div>
+
+</div>
+
+<div class="subject">
+<h3>Entrepreneurship</h3>
+
+<button onclick="toggle('entq1')">Quarter 1</button>
+<div id="entq1" class="hidden">
+<p>
+Entrepreneurship is creating and managing a business to earn profit.
+</p>
+</div>
+
+<button onclick="toggle('entq2')">Quarter 2</button>
+<div id="entq2" class="hidden">
+<p>
+Business plan includes market analysis, strategy, and financial planning.
+</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- QUIZ -->
+
+<div class="card quiz" id="quiz">
+
+<h2>Quick Practice Quiz (Optional)</h2>
+
+<p>Which layer of Earth is the outermost?</p>
+
+<label><input type="radio" name="q1" value="correct"> Crust</label><br>
+<label><input type="radio" name="q1" value="wrong"> Mantle</label><br>
+<label><input type="radio" name="q1" value="wrong"> Core</label>
+
+<br><br>
+
+<button onclick="checkQuiz()">Submit</button>
+
+</div>
+
+</div>
+
+</body>
+</html>
