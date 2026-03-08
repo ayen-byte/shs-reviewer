@@ -1,57 +1,150 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>SHS Reviewer</title>
+<title>SHS Reviewer Hub</title>
+
 <style>
+
 body{
-font-family: Times New Roman;
-background:#f4f6fb;
-text-align:justify;
+font-family: Arial;
+margin:0;
+background:#f4f7fb;
 }
-.container{
-max-width:800px;
-margin:auto;
+
+header{
+background:#3a6df0;
+color:white;
 padding:20px;
+text-align:center;
 }
-.subject{
-background:white;
-padding:15px;
+
+nav{
+background:#2c4cc9;
+padding:10px;
+text-align:center;
+}
+
+nav a{
+color:white;
 margin:10px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
-a{
 text-decoration:none;
-color:#2b6cff;
 font-weight:bold;
 }
+
+.container{
+padding:30px;
+max-width:900px;
+margin:auto;
+}
+
+.card{
+background:white;
+padding:20px;
+margin:15px 0;
+border-radius:10px;
+box-shadow:0 5px 10px rgba(0,0,0,0.1);
+}
+
+button{
+background:#3a6df0;
+color:white;
+border:none;
+padding:10px 15px;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#2c4cc9;
+}
+
+.quiz{
+margin-top:20px;
+}
+
 </style>
+
+<script>
+
+function checkQuiz(){
+
+let answer=document.querySelector('input[name="q1"]:checked');
+
+if(!answer){
+alert("Choose an answer first!");
+return;
+}
+
+if(answer.value=="correct"){
+alert("Correct! Great job!");
+}
+else{
+alert("Incorrect. Try again!");
+}
+
+}
+
+</script>
+
 </head>
 
 <body>
 
+<header>
+<h1>Senior High Reviewer Hub</h1>
+<p>Free Reviewers for Grade 11 and Grade 12</p>
+</header>
+
+<nav>
+<a href="#g11">Grade 11</a>
+<a href="#g12">Grade 12</a>
+<a href="#quiz">Quiz</a>
+</nav>
+
 <div class="container">
-<h1>Senior High School Reviewer</h1>
-<p>Free reviewers for Grade 11 and Grade 12</p>
 
-<div class="subject">
-<h2>General Mathematics</h2>
-<a href="#">Open Reviewer</a>
+<div class="card" id="g11">
+<h2>Grade 11 Subjects</h2>
+
+<ul>
+<li>General Mathematics</li>
+<li>Earth Science</li>
+<li>Oral Communication</li>
+<li>Reading and Writing</li>
+<li>21st Century Literature</li>
+<li>Statistics and Probability</li>
+</ul>
+
 </div>
 
-<div class="subject">
-<h2>Earth Science</h2>
-<a href="#">Open Reviewer</a>
+<div class="card" id="g12">
+<h2>Grade 12 Subjects</h2>
+
+<ul>
+<li>Practical Research</li>
+<li>Media and Information Literacy</li>
+<li>Contemporary Philippine Arts</li>
+<li>Entrepreneurship</li>
+<li>Understanding Culture Society and Politics</li>
+<li>Applied Economics</li>
+</ul>
+
 </div>
 
-<div class="subject">
-<h2>Oral Communication</h2>
-<a href="#">Open Reviewer</a>
-</div>
+<div class="card quiz" id="quiz">
 
-<div class="subject">
-<h2>Practice Quizzes</h2>
-<a href="#">Start Quiz</a>
+<h2>Practice Quiz</h2>
+
+<p>What is 5 + 3?</p>
+
+<label><input type="radio" name="q1" value="wrong"> 6</label><br>
+<label><input type="radio" name="q1" value="wrong"> 7</label><br>
+<label><input type="radio" name="q1" value="correct"> 8</label><br>
+
+<br>
+
+<button onclick="checkQuiz()">Submit Answer</button>
+
 </div>
 
 </div>
